@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌟 Advanced Date Researcher 🌟</title>
+    <title>🚀 Advanced SPACE X Calculator 🚀</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800&family=Audiowide&display=swap');
         
         * {
             margin: 0;
@@ -14,26 +14,29 @@
         }
         
         body {
-            font-family: 'Orbitron', monospace;
-            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
-            color: #00ff41;
+            font-family: 'Exo 2', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 30%, #2d1b69 70%, #1e3c72 100%);
+            color: #ffffff;
             min-height: 100vh;
-            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: relative;
+            overflow-x: hidden;
         }
         
-        /* Matrix-like background animation */
-        .matrix-bg {
+        /* Animated background */
+        .space-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.1;
+            opacity: 0.4;
         }
         
-        .matrix-bg::before {
+        .space-bg::before {
             content: '';
             position: absolute;
             top: 0;
@@ -41,417 +44,520 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 25% 25%, #00ff41 1px, transparent 1px),
-                radial-gradient(circle at 75% 75%, #0099ff 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: matrixMove 20s linear infinite;
+                radial-gradient(circle at 25% 25%, #ff6b6b 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #4ecdc4 1px, transparent 1px),
+                radial-gradient(circle at 50% 10%, #ffe66d 1px, transparent 1px);
+            background-size: 180px 180px, 250px 250px, 120px 120px;
+            animation: cosmicMove 40s linear infinite;
         }
         
-        @keyframes matrixMove {
-            0% { transform: translateY(-100px); }
-            100% { transform: translateY(100px); }
+        @keyframes cosmicMove {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); }
+            100% { transform: translateY(-80px) translateX(-40px) rotate(360deg); }
         }
         
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+        .calculator-container {
+            background: linear-gradient(145deg, rgba(15, 15, 35, 0.95), rgba(45, 27, 105, 0.9));
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(255, 107, 107, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            max-width: 380px;
+            width: 100%;
             position: relative;
-            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .calculator-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #ffe66d, #ff6b6b);
+            border-radius: 25px;
+            z-index: -1;
+            animation: borderGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes borderGlow {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
         }
         
         .header {
             text-align: center;
-            margin-bottom: 40px;
-            animation: glowPulse 2s ease-in-out infinite alternate;
+            margin-bottom: 20px;
         }
         
         .header h1 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            text-shadow: 0 0 20px #00ff41, 0 0 40px #00ff41, 0 0 60px #00ff41;
-            margin-bottom: 10px;
-            letter-spacing: 3px;
+            font-family: 'Audiowide', cursive;
+            font-size: 1.5rem;
+            font-weight: 400;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #ffe66d);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         
         .header p {
-            font-size: 1.2rem;
-            color: #0099ff;
-            text-shadow: 0 0 10px #0099ff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: #b8b8d1;
+            letter-spacing: 1px;
         }
         
-        @keyframes glowPulse {
-            0% { text-shadow: 0 0 20px #00ff41, 0 0 40px #00ff41, 0 0 60px #00ff41; }
-            100% { text-shadow: 0 0 30px #00ff41, 0 0 60px #00ff41, 0 0 90px #00ff41; }
-        }
-        
-        .input-section {
-            background: rgba(0, 255, 65, 0.1);
-            border: 2px solid #00ff41;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
-            backdrop-filter: blur(10px);
-        }
-        
-        .input-group {
+        .display {
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(15, 15, 35, 0.9));
+            border: 2px solid rgba(78, 205, 196, 0.6);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            min-height: 60px;
+            max-height: 120px;
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            align-items: center;
+            justify-content: flex-end;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #4ecdc4;
+            text-shadow: 0 0 15px rgba(78, 205, 196, 0.8);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            box-shadow: 
+                inset 0 2px 10px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(78, 205, 196, 0.2);
         }
         
-        .input-group label {
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-shadow: 0 0 10px #00ff41;
+        .display-line {
+            margin: 2px 0;
+            text-align: right;
+            animation: fadeInUp 0.5s ease;
         }
         
-        .date-input {
-            padding: 15px 20px;
-            font-size: 1.2rem;
-            font-family: 'Orbitron', monospace;
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid #0099ff;
-            border-radius: 10px;
-            color: #00ff41;
-            text-align: center;
-            width: 300px;
-            box-shadow: inset 0 0 20px rgba(0, 153, 255, 0.2);
-            transition: all 0.3s ease;
+        .display-line.step {
+            font-size: 0.9rem;
+            color: #ffe66d;
+            text-align: left;
+            opacity: 0.8;
         }
         
-        .date-input:focus {
-            outline: none;
-            border-color: #00ff41;
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
-            transform: scale(1.05);
-        }
-        
-        .start-btn {
-            padding: 15px 40px;
-            font-size: 1.3rem;
-            font-family: 'Orbitron', monospace;
-            font-weight: 700;
-            background: linear-gradient(45deg, #00ff41, #0099ff);
-            border: none;
-            border-radius: 10px;
-            color: #000;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 5px 20px rgba(0, 255, 65, 0.4);
-        }
-        
-        .start-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 255, 65, 0.6);
-        }
-        
-        .start-btn:active {
-            transform: translateY(0);
-        }
-        
-        .processing-section {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #0099ff;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 30px rgba(0, 153, 255, 0.3);
-            display: none;
-        }
-        
-        .step {
-            font-size: 1.1rem;
-            padding: 10px 0;
-            opacity: 0;
-            transform: translateX(-50px);
-            animation: slideIn 0.5s ease forwards;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .step-icon {
-            font-size: 1.5rem;
-            animation: spin 2s linear infinite;
-        }
-        
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: rgba(0, 153, 255, 0.2);
-            border-radius: 4px;
-            margin: 20px 0;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #00ff41, #0099ff);
-            width: 0%;
-            transition: width 0.5s ease;
-            box-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
-        }
-        
-        .result-section {
-            background: rgba(0, 255, 65, 0.1);
-            border: 2px solid #00ff41;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
-            display: none;
-            animation: resultAppear 1s ease;
-        }
-        
-        @keyframes resultAppear {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: scale(0.8);
+                transform: translateY(10px);
             }
             to {
                 opacity: 1;
-                transform: scale(1);
+                transform: translateY(0);
             }
         }
         
-        .result-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px #00ff41;
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
         }
         
-        .result-date {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #0099ff;
-            text-shadow: 0 0 20px #0099ff;
-            margin: 20px 0;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            border: 1px solid #0099ff;
-        }
-        
-        .reset-btn {
-            padding: 12px 30px;
+        .btn {
+            padding: 15px;
+            font-family: 'Exo 2', sans-serif;
             font-size: 1.1rem;
-            font-family: 'Orbitron', monospace;
-            font-weight: 700;
-            background: linear-gradient(45deg, #ff4444, #ff6666);
+            font-weight: 600;
             border: none;
-            border-radius: 8px;
-            color: white;
+            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
         }
         
-        .reset-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(255, 68, 68, 0.4);
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-number {
+            background: linear-gradient(145deg, #3a3a5c, #2a2a4a);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-number:hover {
+            background: linear-gradient(145deg, #4a4a6c, #3a3a5a);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn-operator {
+            background: linear-gradient(145deg, #ff6b6b, #e55555);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-operator:hover {
+            background: linear-gradient(145deg, #ff8a8a, #ff6b6b);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+        }
+        
+        .btn-clear {
+            background: linear-gradient(145deg, #ff4757, #ff3742);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-clear:hover {
+            background: linear-gradient(145deg, #ff6b7a, #ff4757);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 71, 87, 0.5);
+        }
+        
+        .btn-equals {
+            background: linear-gradient(145deg, #4ecdc4, #45b7aa);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            grid-column: span 2;
+            font-weight: 700;
+        }
+        
+        .btn-equals:hover {
+            background: linear-gradient(145deg, #70d7ce, #4ecdc4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.5);
         }
         
         /* Responsive design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
+        @media (max-width: 480px) {
+            .calculator-container {
+                margin: 15px;
+                padding: 20px;
+                max-width: 340px;
             }
             
             .header h1 {
-                font-size: 2rem;
+                font-size: 1.3rem;
             }
             
-            .date-input {
-                width: 100%;
-                max-width: 300px;
+            .display {
+                font-size: 1.5rem;
+                min-height: 50px;
+                padding: 12px;
             }
             
-            .input-section, .processing-section, .result-section {
-                padding: 20px;
+            .btn {
+                padding: 12px;
+                font-size: 1rem;
             }
         }
         
-        /* Glitch effect for extra movie feel */
-        .glitch {
-            animation: glitch 0.3s ease-in-out infinite alternate;
+        /* Special effects */
+        .rocket-launch {
+            animation: rocketLaunch 0.5s ease;
         }
         
-        @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0); }
+        @keyframes rocketLaunch {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+        
+        .error-shake {
+            animation: errorShake 0.5s ease;
+        }
+        
+        @keyframes errorShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
         }
     </style>
 </head>
 <body>
-    <div class="matrix-bg"></div>
+    <div class="space-bg"></div>
     
-    <div class="container">
+    <div class="calculator-container">
         <div class="header">
-            <h1>🌟 ADVANCED DATE RESEARCHER 🌟</h1>
-            <p>Ultra-Secure Temporal Analysis System</p>
+            <h1>🚀 ADVANCED SPACE X CALCULATOR 🚀</h1>
+            <p>Powered by Rocket Science Technology</p>
         </div>
         
-        <div class="input-section" id="inputSection">
-            <div class="input-group">
-                <label for="dateInput">📅 Enter Today's Date (YYYY-MM-DD):</label>
-                <input type="date" id="dateInput" class="date-input" required>
-                <button class="start-btn" onclick="startResearch()">🚀 INITIATE RESEARCH</button>
-            </div>
+        <div class="display" id="display">
+            <div class="display-line" id="currentInput">0</div>
         </div>
         
-        <div class="processing-section" id="processingSection">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-            <div id="stepsContainer"></div>
-        </div>
-        
-        <div class="result-section" id="resultSection">
-            <h2>✨ RESEARCH COMPLETE ✨</h2>
-            <p>Advanced AI Analysis Result:</p>
-            <div class="result-date" id="resultDate"></div>
-            <button class="reset-btn" onclick="resetSystem()">🔄 NEW RESEARCH</button>
+        <div class="buttons-grid">
+            <button class="btn btn-clear" onclick="clearDisplay()">C</button>
+            <button class="btn btn-clear" onclick="deleteLast()">⌫</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('/')">/</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('*')">×</button>
+            
+            <button class="btn btn-number" onclick="appendToDisplay('7')">7</button>
+            <button class="btn btn-number" onclick="appendToDisplay('8')">8</button>
+            <button class="btn btn-number" onclick="appendToDisplay('9')">9</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('-')">-</button>
+            
+            <button class="btn btn-number" onclick="appendToDisplay('4')">4</button>
+            <button class="btn btn-number" onclick="appendToDisplay('5')">5</button>
+            <button class="btn btn-number" onclick="appendToDisplay('6')">6</button>
+            <button class="btn btn-operator" onclick="appendToDisplay('+')">+</button>
+            
+            <button class="btn btn-number" onclick="appendToDisplay('1')">1</button>
+            <button class="btn btn-number" onclick="appendToDisplay('2')">2</button>
+            <button class="btn btn-number" onclick="appendToDisplay('3')">3</button>
+            <button class="btn btn-number" onclick="appendToDisplay('0')" style="grid-row: span 2;">0</button>
+            
+            <button class="btn btn-number" onclick="appendToDisplay('.')">.</button>
+            <button class="btn btn-equals" onclick="calculate()">=</button>
         </div>
     </div>
     
     <script>
+        let currentInput = '0';
+        let shouldResetDisplay = false;
+        let isProcessing = false;
+        let currentStepElement = null;
+        
         const steps = [
-            "⚙️ Processing your input...",
-            "🔎 Doing Advanced Research...",
-            "👽 Connecting With Aliens...",
-            "🚀 Contacting NASA Headquarters...",
-            "🕵️ Scanning FBI Secure Database...",
-            "🛰️ Communicating with International Space Station...",
-            "⏳ Hacking into Time Travel Portals...",
-            "🛸 Accessing Secret Files of Area 51...",
-            "💻 Analyzing Data with Supercomputers...",
-            "📡 Cross-checking with Satellites...",
-            "✅ Finalizing Results..."
+            "🧠 Calling Einstein for help...",
+            "⚖️ Applying Newton's 3rd law...",
+            "🛰️ Consulting NASA scientists...",
+            "🤖 Asking ChatGPT secretly...",
+            "✅ Finalizing the result..."
         ];
         
-        let currentStep = 0;
-        let researchInterval;
+        const possibleAnswers = [
+            () => Math.floor(Math.random() * 9999) + 1,
+            () => generateRandomString(7),
+            "Hello World!",
+            "Hey Developer, nice try!",
+            "Error 404: Math not found",
+            "Why so serious? 😂",
+            "Answer is classified 🚀",
+            "Go ask Google!",
+            "I lost count, sorry!",
+            "42", // The answer to everything
+            "∞",
+            "NaN but in a cool way",
+            "Rocket fuel needed",
+            "Mars says no",
+            "Ask Elon Musk"
+        ];
         
-        function startResearch() {
-            const dateInput = document.getElementById('dateInput');
-            const inputDate = dateInput.value;
+        function generateRandomString(length) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+        
+        function updateCurrentInput() {
+            const currentInputElement = document.getElementById('currentInput');
+            currentInputElement.textContent = currentInput;
+        }
+        
+        function showCurrentStep(text) {
+            const display = document.getElementById('display');
+            const currentInputElement = document.getElementById('currentInput');
             
-            if (!inputDate) {
-                alert('Please enter a date first! 📅');
-                return;
+            // Remove previous step if exists
+            if (currentStepElement) {
+                currentStepElement.remove();
             }
             
-            // Hide input section and show processing
-            document.getElementById('inputSection').style.display = 'none';
-            document.getElementById('processingSection').style.display = 'block';
-            document.getElementById('resultSection').style.display = 'none';
+            // Create new step element
+            currentStepElement = document.createElement('div');
+            currentStepElement.className = 'display-line step';
+            currentStepElement.textContent = text;
             
-            // Reset progress
-            currentStep = 0;
-            document.getElementById('stepsContainer').innerHTML = '';
-            document.getElementById('progressFill').style.width = '0%';
+            // Insert before the current input line
+            display.insertBefore(currentStepElement, currentInputElement);
             
-            // Start the research process
-            researchInterval = setInterval(() => {
+            // Auto scroll to bottom
+            display.scrollTop = display.scrollHeight;
+        }
+        
+        function clearDisplayHistory() {
+            const display = document.getElementById('display');
+            const currentInputElement = document.getElementById('currentInput');
+            
+            // Remove all lines except current input
+            const lines = display.querySelectorAll('.display-line:not(#currentInput)');
+            lines.forEach(line => line.remove());
+            
+            // Reset current step element
+            currentStepElement = null;
+        }
+        
+        function appendToDisplay(value) {
+            if (isProcessing) return;
+            
+            if (shouldResetDisplay) {
+                currentInput = '0';
+                shouldResetDisplay = false;
+                clearDisplayHistory();
+            }
+            
+            if (currentInput === '0' && value !== '.') {
+                currentInput = value;
+            } else {
+                currentInput += value;
+            }
+            
+            updateCurrentInput();
+            
+            // Add button press effect
+            event.target.classList.add('rocket-launch');
+            setTimeout(() => {
+                event.target.classList.remove('rocket-launch');
+            }, 500);
+        }
+        
+        function clearDisplay() {
+            if (isProcessing) return;
+            
+            currentInput = '0';
+            updateCurrentInput();
+            clearDisplayHistory();
+        }
+        
+        function deleteLast() {
+            if (isProcessing) return;
+            
+            if (currentInput.length > 1) {
+                currentInput = currentInput.slice(0, -1);
+            } else {
+                currentInput = '0';
+            }
+            updateCurrentInput();
+        }
+        
+        function calculate() {
+            if (isProcessing) return;
+            
+            const expression = currentInput;
+            isProcessing = true;
+            
+            // Start the fake calculation process directly without showing the expression
+            let currentStep = 0;
+            const interval = setInterval(() => {
                 if (currentStep < steps.length) {
-                    addStep(steps[currentStep]);
-                    updateProgress();
+                    showCurrentStep(steps[currentStep]);
                     currentStep++;
                 } else {
-                    clearInterval(researchInterval);
-                    showResult(inputDate);
+                    clearInterval(interval);
+                    showTrollResult(expression);
                 }
-            }, 2000);
-        }
-        
-        function addStep(stepText) {
-            const stepsContainer = document.getElementById('stepsContainer');
-            const stepDiv = document.createElement('div');
-            stepDiv.className = 'step';
-            stepDiv.innerHTML = `
-                <span class="step-icon">⚡</span>
-                <span>${stepText}</span>
-            `;
-            stepsContainer.appendChild(stepDiv);
-            
-            // Add glitch effect randomly
-            if (Math.random() > 0.7) {
-                stepDiv.classList.add('glitch');
-                setTimeout(() => stepDiv.classList.remove('glitch'), 300);
-            }
-            
-            // Scroll to bottom
-            stepDiv.scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        function updateProgress() {
-            const progressFill = document.getElementById('progressFill');
-            const percentage = ((currentStep + 1) / steps.length) * 100;
-            progressFill.style.width = percentage + '%';
-        }
-        
-        function showResult(inputDate) {
-            setTimeout(() => {
-                document.getElementById('processingSection').style.display = 'none';
-                document.getElementById('resultSection').style.display = 'block';
-                document.getElementById('resultDate').textContent = inputDate;
-                
-                // Add some dramatic effect
-                const resultDate = document.getElementById('resultDate');
-                resultDate.classList.add('glitch');
-                setTimeout(() => resultDate.classList.remove('glitch'), 1000);
             }, 1000);
         }
         
-        function resetSystem() {
-            document.getElementById('inputSection').style.display = 'block';
-            document.getElementById('processingSection').style.display = 'none';
-            document.getElementById('resultSection').style.display = 'none';
-            document.getElementById('dateInput').value = '';
-            
-            // Clear any running intervals
-            if (researchInterval) {
-                clearInterval(researchInterval);
-            }
+        function showTrollResult(expression) {
+            setTimeout(() => {
+                // Remove the current step
+                if (currentStepElement) {
+                    currentStepElement.remove();
+                    currentStepElement = null;
+                }
+                
+                // Choose a random troll answer
+                let answer = possibleAnswers[Math.floor(Math.random() * possibleAnswers.length)];
+                if (typeof answer === 'function') {
+                    answer = answer();
+                }
+                
+                currentInput = answer.toString();
+                updateCurrentInput();
+                shouldResetDisplay = true;
+                isProcessing = false;
+                
+                // Add special effect
+                const currentInputElement = document.getElementById('currentInput');
+                currentInputElement.classList.add('error-shake');
+                setTimeout(() => {
+                    currentInputElement.classList.remove('error-shake');
+                }, 1000);
+                
+            }, 500);
         }
         
-        // Set today's date as default
-        window.onload = function() {
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('dateInput').value = today;
-        };
-        
-        // Add some random glitch effects to the header
-        setInterval(() => {
-            const header = document.querySelector('.header h1');
-            if (Math.random() > 0.95) {
-                header.classList.add('glitch');
-                setTimeout(() => header.classList.remove('glitch'), 200);
+        // Keyboard support
+        document.addEventListener('keydown', function(event) {
+            if (isProcessing) return;
+            
+            const key = event.key;
+            
+            if (key >= '0' && key <= '9') {
+                appendToDisplay(key);
+            } else if (key === '.') {
+                appendToDisplay('.');
+            } else if (key === '+') {
+                appendToDisplay('+');
+            } else if (key === '-') {
+                appendToDisplay('-');
+            } else if (key === '*') {
+                appendToDisplay('*');
+            } else if (key === '/') {
+                event.preventDefault();
+                appendToDisplay('/');
+            } else if (key === 'Enter' || key === '=') {
+                event.preventDefault();
+                calculate();
+            } else if (key === 'Escape' || key === 'c' || key === 'C') {
+                clearDisplay();
+            } else if (key === 'Backspace') {
+                deleteLast();
             }
-        }, 1000);
+        });
+        
+        // Add some random glitch effects
+        setInterval(() => {
+            const currentInputElement = document.getElementById('currentInput');
+            if (Math.random() > 0.98) {
+                currentInputElement.style.textShadow = '0 0 20px #ff0000, 0 0 30px #ff0000';
+                setTimeout(() => {
+                    currentInputElement.style.textShadow = '0 0 15px rgba(78, 205, 196, 0.8)';
+                }, 100);
+            }
+        }, 2000);
+        
+        // Initialize display
+        updateCurrentInput();
     </script>
 </body>
 </html>
+
